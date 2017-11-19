@@ -23,7 +23,7 @@ Você precisa instalar esse packpage no Python
 ```
 pip install requests beautifulsoup4 
 ```
-###Como Usar
+### Como Usar
 Instale o Python
 Rode o código em Python.
 
