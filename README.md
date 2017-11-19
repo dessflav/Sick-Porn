@@ -18,7 +18,7 @@ PT-BR
 # Pornô Doentio
 Este é um programa raspa títulos de pornôs com o intuito de criar um ranking dos videos e possivelmente identificar quais possuem cunho sexual impróprios que ferem éticas humanas. É importante ressaltar que todos os dados são brasileiros!
 
-### Para começar 
+## Para começar 
 Você precisa instalar esse packpage no Python 
 ```
 pip install requests beautifulsoup4 
