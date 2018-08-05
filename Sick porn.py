@@ -1,6 +1,5 @@
-    #Andressa Flávia Ribeiro de Oliveira 1° ADS B
-    #Raspagem com propósito de coletar títulos de cunho sexual impróprio
-
+import requests
+from bs4 import BeautifulSoup
 
 print ('    Olá! Este é um programa raspa títulos de pornôs com o intuito de criar um ranking dos videos e possivelmente identificar quais possuem cunho sexual impróprios que ferem éticas humanas.')
 print ('    É importante ressaltar que todos os dados são brasileiros!')
@@ -16,15 +15,13 @@ else:
     while(rodar):
         opcao = int(input("QUAL A OPÇÃO DESEJADA?\n"+
                       "1-Videos mais vistos\n"+
-                      "2-Raspagem dos Títulos com cunho sexual imprório\n"+ 
+                      "2-Raspagem dos Títulos com cunho sexual impróprio\n"+ 
                       "3-Categorias - Mais vistas e quantidade de videos(HETERO)\n"+
                       "4-Categorias - Mais vistas e quantidade de videos (GAY)\n"+
-                      "5-Informações do Desenvolvedor e Curiosidades da Raspagem\n"+
+                      "5-Informações da Desenvolvedora\n"+
                       "6-Sair\n" ))    
 
         if opcao == 1:
-            import requests
-            from bs4 import BeautifulSoup
 
             url = 'https://pt.pornhub.com/video?o=mv&t=y' 
             counter = 1
@@ -43,12 +40,9 @@ else:
                 
 
         elif opcao == 2:
-            import requests
-            from bs4 import BeautifulSoup
 
             url = 'https://pt.pornhub.com/video?o=mv&t=y' 
             counter = 1
-
 
             for n in range(1,13):
                 pagina = url+'&page='+str(n)
@@ -59,7 +53,7 @@ else:
                 for palavra in valores:
                     t = (str(counter)+'º lugar:' + palavra.getText())
                     counter +=1
-                    doentio = ["irma","irmã","pai","mae","mãe","madrasta","padrasto","primo","prima","adolescente","teen","mother","sister","father","brother","abuse"]
+                    doentio = ["irma","irmã","pai","mae","mãe","madrasta","padrasto","primo","prima","adolescente","teen","mother","sister","father","brother","abuse","encox"]
                     lista = []
                     lista.append(t)
 
@@ -70,12 +64,9 @@ else:
                                 print (frase)
 
         elif opcao == 3:
-            import requests
-            from bs4 import BeautifulSoup
 
             url = 'https://pt.pornhub.com/categories'
             counter = 1
-
 
             html = requests.get(url)
             bs = BeautifulSoup(html.content, 'html.parser')
@@ -86,12 +77,9 @@ else:
 
 
         elif opcao == 4:
-            import requests
-            from bs4 import BeautifulSoup
 
             url = 'https://pt.pornhub.com/gay/categories'
             counter = 1
-
 
             pagina = url
             html = requests.get(pagina)
@@ -102,18 +90,10 @@ else:
                 counter +=1
                 print("\n")
 
-        elif opcao == 5: #arrumar espaçamento
+        elif opcao == 5:
             print ('\n')
             print('Desenvolvido por Andressa Flávia Ribeiro Oliveira\n'+
-                  'Curiosidade nº1: Uma das categorias mais vistas pelo público\n'+
-                  'HÉTERO, é a categoria travesti, o que não faz sentido já que\n'+
-                  '90% do público pôrno são homens, que por sua vez nesse grupo, se dizem héteros.\n'+
-                  'Curiosidade nº2: Quando analisada a categoria Gay, não há vi\n'+
-                  'deos de mulheres homossexuais, isso reforça que sites pornôs\n'+
-                  'não são destinados a mulheres, e que a categoria "lésbica" só\n'+
-                  'serve em pró do publico masculino (na visão dos sites)\n'+
-                  'Curiosidade nº3: 3/4 dos títulos violam o correto, isso\n'+
-                  'reforça o desejo pelo proíbido/incorreto.')
+                  'Tem vontade de contribuir com esse projeto? Me contate!')
             print ('\n')
 
          
@@ -122,4 +102,4 @@ else:
             rodar = False
 
         else:
-            print("numero invalido\n")
+            print("Número inválido\n")
